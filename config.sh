@@ -33,3 +33,5 @@ alias helios='ssh -p 2222 s182190@helios.cs.ifmo.ru'
 
 PATH=$HOME/.my-super-scripts:$PATH
 export PATH
+
+setTTL.sh 130
