@@ -12,7 +12,7 @@ export USBKEYS=($(
 export STICK
 case ${#USBKEYS[@]} in
     0 ) echo No USB Stick found; exit 0 ;;
-    1 ) STICK=$USBKEYS ;;
+    1 ) STICK=${USBKEYS} ;;
     * )
     STICK=$(
     bash -c "$(
@@ -30,4 +30,4 @@ esac
 
 [ "$STICK" ] || exit 0
 
-echo $STICK
+echo ${STICK}
