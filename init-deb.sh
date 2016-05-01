@@ -35,5 +35,6 @@ rm -f ideaIU-2016.1.1.tar.gz
 wget https://download.jetbrains.com/cpp/CLion-2016.1.1.tar.gz && tar -zxvf CLion-2016.1.1.tar.gz
 rm -f CLion-2016.1.1.tar.gz
 
+~/.my-super-scripts/setup.sh
 
 cat /etc/default/avahi-daemon | sudo sed 's/AVAHI_DAEMON_DETECT_LOCAL=1/AVAHI_DAEMON_DETECT_LOCAL=0/g' > /etc/default/avahi-daemon
