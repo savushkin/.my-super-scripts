@@ -2,43 +2,40 @@
 USER_HOME="/home/ivan"
 
 :> init_error.log
-:> init_log.log
 exec 2>> init_error.log
-exec 1>> init_log.log
 
 alias apt-get="sudo apt-get -y"
 alias add-apt-repository="sudo add-apt-repository -y"
 
-apt-get update
-apt-get upgrade
-apt-get dist-upgrade
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
 
-add-apt-repository ppa:webupd8team/java
-add-apt-repository ppa:maarten-baert/simplescreenrecorder
-add-apt-repository ppa:libreoffice/ppa
-add-apt-repository ppa:ravefinity-project/ppa
-add-apt-repository ppa:graphics-drivers/ppa
-add-apt-repository ppa:atareao/telegram
+sudo add-apt-repository ppa:webupd8team/java
+sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder
+sudo add-apt-repository ppa:libreoffice/ppa
+sudo add-apt-repository ppa:ravefinity-project/ppa
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo add-apt-repository ppa:atareao/telegram
 
-apt-get update
+sudo apt-get update
 
-apt-get install git
+sudo apt install git
 
 cd ${USER_HOME}
 git clone https://github.com/savushkin/.my-super-scripts.git
 
-apt-get install xubuntu-restricted-extras install xfce4-artwork xfce4-xkb-plugin xfce4-battery-plugin xfce4-clipman xfce4-clipman-plugin xfce4-cpufreq-plugin xfce4-datetime-plugin xfce4-diskperf-plugin xfce4-fsguard-plugin xfce4-genmon-plugin xfce4-goodies xfce4-mount-plugin xfce4-sensors-plugin xfce4-smartbookmark-plugin xfce4-timer-plugin xfce4-wavelan-plugin
+sudo apt install xubuntu-restricted-extras xfce4-artwork xfce4-xkb-plugin xfce4-battery-plugin xfce4-clipman xfce4-clipman-plugin xfce4-cpufreq-plugin xfce4-datetime-plugin xfce4-diskperf-plugin xfce4-fsguard-plugin xfce4-genmon-plugin xfce4-goodies xfce4-mount-plugin xfce4-sensors-plugin xfce4-smartbookmark-plugin xfce4-timer-plugin xfce4-wavelan-plugin
 
-apt-get install avant-window-navigator telegram curl oracle-java8-installer simplescreenrecorder synaptic exfat-fuse exfat-utils vlc audacity gimp gimp-data-extras kdenlive kde-l10n-ru geany clementine adobe-flashplugin libavcodec-extra skype gtk2-engines-murrine:i386 gtk2-engines-pixbuf:i386 sni-qt:i386
-apt-get install p7zip-rar p7zip-full unace unrar zip unzip sharutils rar
-apt-get install screenfetch virtualbox unetbootin
+sudo apt install telegram curl oracle-java8-installer simplescreenrecorder synaptic exfat-fuse exfat-utils vlc audacity gimp gimp-data-extras kdenlive kde-l10n-ru geany clementine libavcodec-extra skype gtk2-engines-murrine:i386 gtk2-engines-pixbuf:i386 sni-qt:i386
+sudo apt install p7zip-rar p7zip-full unace unrar zip unzip sharutils rar
+sudo apt install screenfetch virtualbox unetbootin
 
 sh /usr/share/doc/libdvdread4/install-css.sh
 
 # node
 curl -sL https://deb.nodesource.com/setup | sudo bash -
-apt-get install nodejs
-apt-get install build-essential
+sudo apt install nodejs build-essential npm
 
 # LaTeX
 apt-get install texlive-full
@@ -53,10 +50,6 @@ wget https://download.jetbrains.com/idea/ideaIU-2016.1.1.tar.gz && tar -zxvf ide
 rm -f ideaIU-2016.1.1.tar.gz
 wget https://download.jetbrains.com/cpp/CLion-2016.1.1.tar.gz && tar -zxvf CLion-2016.1.1.tar.gz
 rm -f CLion-2016.1.1.tar.gz
-
-# chrome
-cd ${USER_HOME}/exp
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" /etc/apt/sources.list.d/google-chrome.list' && apt-get update && apt-get install google-chrome-stable
 
 # maven
 cd ${USER_HOME}/exp
